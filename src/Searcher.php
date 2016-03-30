@@ -1,12 +1,6 @@
 <?php
 
-/* 
-   https://packagist.org/packages/guzzlehttp/guzzle
-   http://www.sitepoint.com/guzzle-php-http-client/
-   http://docs.guzzlephp.org/en/latest/faq.html	
-*/
-
-require_once '../vendor/autoload.php';
+require_once './vendor/autoload.php';
 
 use Guzzle\Http\Client;
 use Guzzle\Http\EntityBody;
