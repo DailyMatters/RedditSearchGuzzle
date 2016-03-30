@@ -1,0 +1,12 @@
+    {
+        "name": "cr/guzzle",
+        "authors": [
+            {
+                "name": "Claudio Ribeiro",
+                "email": "claudio.santos.ribeiro@gmail.com"
+            }
+        ],
+        "require": {
+            "guzzle/guzzle": "~3.7"
+        }
+    }
