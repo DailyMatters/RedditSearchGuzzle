@@ -18,11 +18,7 @@ class Searcher {
  	 * @param $results The number of results to return
  	 *
 	**/
-	public function execSearch($subreddit, $query, $options, $results = 10) {
-
-		if( $subreddit == "" ){
-			$subreddit = "php";
-		}
+	public function execSearch($subreddit = 'php', $query, $options, $results = 10) {
 
 		//Checks if options are valid
 		if ($this->validateOptions($options) !== false && $this->validateLimit($results) !== false) {
