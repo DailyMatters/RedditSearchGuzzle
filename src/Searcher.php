@@ -27,7 +27,8 @@ class Searcher {
 		
 			//Executes an http request using guzzle
 		    $client = new GuzzleHttp\Client(['base_uri' => 'https://reddit.com/r/' . $subreddit . "/search.json?q=" . $query . "&restrict_sr=1&sort=" . $options . "&limit=" . $roundedResults, 
-		    								'headers' => ['User-Agent' => 'testing/1.0']]);
+		    								'headers' => ['User-Agent' => 'testing/1.0'],
+		    								'verify' => false]);
 		    $response = $client->request("GET");
 											    
 		    $body = $response->getBody(true);

@@ -9,13 +9,24 @@
 <html>
 <head>
 <title>Reddit Search Table</title>
+
+<link rel="stylesheet" type="text/css" href="resources/style.css">
 </head>
 
 <body>
 <?php
     if (count($data->data->children)) {
         // Open the table
-        echo "<table>";
+        echo "<table id='posts'>";
+        echo "<tr>";
+        echo "<th>Title</th>";
+        echo "<th>Ups</th>";
+        echo "<th>Downs</th>";
+        echo "<th>Created At</th>";
+        echo "<th>Subreddit</th>";
+        echo "<th>Number of Comments</th>";
+        echo "<th>Link</th>";
+        echo "</tr>";
 
         // Cycle through the array
         foreach ($data->data->children as $res) {
