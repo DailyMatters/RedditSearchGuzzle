@@ -1,7 +1,7 @@
 <?php
-    include_once( 'usage.php' );
+    include_once( 'utils.php' );
 
-    $json=doSearch( 'php', 'composer', 'hot', 2);
+    $json=doSearch( 'php', 'composer', 'hot', 5);
     $data =  json_decode($json);
 
     ?>
