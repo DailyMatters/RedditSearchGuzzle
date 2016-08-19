@@ -1,4 +1,4 @@
-    {
+{
         "name": "cr/guzzle",
         "authors": [
             {
@@ -7,6 +7,6 @@
             }
         ],
         "require": {
-            "guzzle/guzzle": "~3.7"
+                "guzzlehttp/guzzle": "^6.2"
         }
-    }
+}

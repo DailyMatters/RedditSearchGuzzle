@@ -2,10 +2,10 @@
 
 require_once './vendor/autoload.php';
 
-use Guzzle\Http\Client;
-use Guzzle\Http\EntityBody;
-use Guzzle\Http\Message\Request;
-use Guzzle\Http\Message\Response;
+use GuzzleHttp\Client;
+use GuzzleHttp\EntityBody;
+use GuzzleHttp\Message\Request;
+use GuzzleHttp\Message\Response;
 
 class Searcher {
 
@@ -26,10 +26,10 @@ class Searcher {
 			$roundedResults = round( $results );
 		
 			//Executes an http request using guzzle
-		    $client = new Client("https://reddit.com");
-		    $request = $client->get("/r/" . $subreddit . "/search.json?q=" . $query . "&restrict_sr=1&sort=" . $options . "&limit=" . $roundedResults);
-		    $response = $request->send();
-		    
+		    $client = new GuzzleHttp\Client(['base_uri' => 'https://reddit.com/r/' . $subreddit . "/search.json?q=" . $query . "&restrict_sr=1&sort=" . $options . "&limit=" . $roundedResults, 
+		    								'headers' => ['User-Agent' => 'testing/1.0']]);
+		    $response = $client->request("GET");
+											    
 		    $body = $response->getBody(true);
 			
 			return $body;
