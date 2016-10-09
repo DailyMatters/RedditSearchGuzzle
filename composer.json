@@ -7,6 +7,7 @@
             }
         ],
         "require": {
-                "guzzlehttp/guzzle": "^6.2"
+                "guzzlehttp/guzzle": "^6.2",
+                "adoy/oauth2": "^1.3"
         }
 }
