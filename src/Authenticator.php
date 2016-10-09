@@ -31,7 +31,7 @@ class Authenticator{
 		}
 	}
 
-	/*public function getUserPreferences( $client, $accessToken ){
+	public function getUserPreferences( $client, $accessToken ){
 	
 			$params = array("code" => $_GET["code"], "redirect_uri" => $this->redirectUrl);
 			$response = $client->getAccessToken($accessToken, "authorization_code", $params);
@@ -46,7 +46,7 @@ class Authenticator{
 			print_r($response);
 			echo('</pre>');
 	
-	}*/
+	}
 
 	public function getUserPrivateMessages( $client, $accessToken ){
 		
