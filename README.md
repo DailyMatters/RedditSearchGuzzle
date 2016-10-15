@@ -1,5 +1,7 @@
 # PHP Reddit Searcher ( Using GuzzleHTTP )
 
+![alt tag](https://travis-ci.org/DailyMatters/RedditSearchGuzzle.svg?branch=master)
+
 ## What is this?
 
 This PHP package uses the Reddit API to do dedicated searches on every subbreddit.
