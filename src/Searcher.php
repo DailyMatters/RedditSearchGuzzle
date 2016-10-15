@@ -29,9 +29,9 @@ class Searcher {
 			$client = new Client(
 				[
 					'base_uri' => 'https://reddit.com/r/' . $subreddit . "/search.json?q=" . $query . "&restrict_sr=1&sort=" . $options . "&limit=" . $roundedResults,
-					'headers' => ['User-Agent' => 'testing/1.0'
-				],
-				'verify' => false]
+					'headers' => ['User-Agent' => 'testing/1.0'],
+					'verify' => false
+				]
 			);
 			$response = $client->request("GET");
 
