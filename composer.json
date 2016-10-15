@@ -8,6 +8,17 @@
         ],
         "require": {
                 "guzzlehttp/guzzle": "^6.2",
-                "adoy/oauth2": "^1.3"
+                "adoy/oauth2": "^1.3",
+                "phpunit/phpunit": "^5.6"
+        },
+        "autoload": {
+            "psr-4": {
+                "redditSearchGuzzle\\Searcher\\": "src/"
+            }
+        },
+        "autoload-dev": {
+            "psr-4": {
+                "redditSearchGuzzle\\Searcher\\Test\\": "test/"
+            }
         }
 }

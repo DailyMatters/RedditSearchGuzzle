@@ -1,6 +1,6 @@
 <?php
 
-require_once './vendor/autoload.php';
+namespace redditSearchGuzzle\Searcher;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\EntityBody;
@@ -24,15 +24,19 @@ class Searcher {
 		if ($this->validateOptions($options) !== false && $this->validateLimit($results) !== false) {
 
 			$roundedResults = round( $results );
-		
+
 			//Executes an http request using guzzle
-		    $client = new GuzzleHttp\Client(['base_uri' => 'https://reddit.com/r/' . $subreddit . "/search.json?q=" . $query . "&restrict_sr=1&sort=" . $options . "&limit=" . $roundedResults, 
-		    								'headers' => ['User-Agent' => 'testing/1.0'],
-		    								'verify' => false]);
-		    $response = $client->request("GET");
-											    
-		    $body = $response->getBody(true);
-			
+			$client = new Client(
+				[
+					'base_uri' => 'https://reddit.com/r/' . $subreddit . "/search.json?q=" . $query . "&restrict_sr=1&sort=" . $options . "&limit=" . $roundedResults,
+					'headers' => ['User-Agent' => 'testing/1.0'
+				],
+				'verify' => false]
+			);
+			$response = $client->request("GET");
+
+			$body = $response->getBody(true);
+
 			return $body;
 		}
 		else {
@@ -49,23 +53,25 @@ class Searcher {
 
 		if( in_array( $options, $possible) ){
 			return $options;
-		} else{
+		}
+		else {
 			return false;
 		}
 
 	}
-	
+
 	/**
 	 * Checks if the limit passed is valid
 	 */
 	protected function validateLimit( $limit ){
-		
+
 		if( is_integer( $limit )){
 			return $limit;
-		}else{
+		}
+		else {
 			return false;
 		}
-		
+
 	}
 
 }
