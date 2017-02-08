@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <title>Reddit Search Table</title>
+
+    <link rel="stylesheet" type="text/css" href="resources/style.css">
+</head>
+<body>
+    
+    <table id='posts'>
+        <tr>
+	        <th>Title</th>
+	        <th>Ups</th>
+	        <th>Downs</th>
+	        <th>Created At</th>
+	        <th>Subreddit</th>
+	        <th>Number of Comments</th>
+	        <th>Link</th>
+        </tr>
+
+        {% for item in results %}
+
+	        <tr>
+	            <td>{{ item.data.title }}</td>
+	            <td>{{ item.data.ups }}</td>
+	            <td>{{ item.data.downs }}</td>
+	            <td>{{ item.data.created_utc }}</td>
+	            <td>{{ item.data.subreddits }}</td>
+	            <td>{{ item.data.num_comments }}</td>
+	            <td>{{ item.data.permalink }}</td>
+	        </tr>
+
+        {% endfor %}
+
+    </table>
+
+</body>
+</html>

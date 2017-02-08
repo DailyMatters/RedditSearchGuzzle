@@ -8,6 +8,10 @@
         ],
         "require": {
                 "guzzlehttp/guzzle": "^6.2",
-                "adoy/oauth2": "^1.3"
+                "adoy/oauth2": "^1.3",
+                "twig/twig": "^1.30"
+        },
+        "autoload": {
+          "psr-4": {"ApiReddit\\": "src/"}         
         }
 }
